@@ -1,5 +1,7 @@
 #Benchmark for simple dedup implementation.
 
+I almost sure, for simple deduplication implementation for strings, complexity can be more than O(N) in case we have mostly unique strings. So I tried to check it.
+
 Results:  
 
 ```
@@ -59,8 +61,12 @@ BenchmarkDedup/Dedup_preinitMap_33554432-8                     1        12572539
 BenchmarkDedup/Dedup_justMap_67108864-8                        1        90527350257 ns/op
 BenchmarkDedup/Dedup_preinitMap_67108864-8                     1        65869985182 ns/op
 PASS
-ok      _/Users/dkurilo/personal/golang/src/benchgraph/dedupperf        495.863s
+ok      .../benchgraph/dedupperf        495.863s
 ```
 
 Visualization for Results are here:  
-https://docs.google.com/spreadsheets/d/1OwH9gF4AokMkAZ1hDc5qi4w12POKDze6jlFHKlXDfoA/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1OwH9gF4AokMkAZ1hDc5qi4w12POKDze6jlFHKlXDfoA/edit?usp=sharing  
+
+##Conclusion
+
+Yes, it's not O(N).
